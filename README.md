@@ -1,2 +1,2 @@
 # datastructures
-Java data structures
+Java data structures implemented by Vinston Guillaume
