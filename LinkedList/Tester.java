@@ -9,5 +9,9 @@ public class Tester{
     list.addAtFront(8);
     list.addAtEnd(5);
     list.printList();
+    //list.reverse(list.head);
+    System.out.println();
+    list.delete(8);
+    list.printList();
   }
 }

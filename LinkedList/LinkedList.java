@@ -7,34 +7,36 @@
   stored contigously.
 
   Disadvantages: Random access is not allowed. We must access nodes sequentially starting from
-  the first one. Extra memory is required for each element of the list
+  the head one. Extra memory is required for each element of the list
 */
 
 public class LinkedList{
 
-    class Node{
-    int data;
-    Node next;
+//------------------------------------------------------------------
+  static Node head = null;
+//------------------------------------------------------------------
+    static class Node{
+      int data;
+      Node next;
 
     Node(int data){
       this.data = data;
+      next = null;
     }
   }
-//------------------------------------------------------------------
-  Node first = null;
-//------------------------------------------------------------------
+
   public void addAtFront(int data){
     Node newNode = new Node(data);
-    newNode.next = first;
-    first = newNode;
+    newNode.next = head;
+    head = newNode;
   }
 //------------------------------------------------------------------
   public void addAtEnd(int data){
     Node newNode = new Node(data);
-    if(first == null){
-      first = newNode;
+    if(head == null){
+      head = newNode;
     } else{
-      Node temp = first;
+      Node temp = head;
 
       while(temp.next != null){
         temp = temp.next;
@@ -45,11 +47,11 @@ public class LinkedList{
   }
 //------------------------------------------------------------------
   public void removeFront(){
-    first = first.next;
+    head = head.next;
   }
 //------------------------------------------------------------------
   public void printList(){
-    Node temp = first;
+    Node temp = head;
     while(temp != null){
       System.out.print(temp.data+"-> ");
       temp = temp.next;;;
@@ -57,7 +59,39 @@ public class LinkedList{
 
   }
 //------------------------------------------------------------------
+// Reverse LinkedList
+  public Node reverse(Node node){
+    Node prev = null;
+    Node current = node;
 
+    while(current != null){
+      Node next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+    node = prev;
+    return node;
+  }
+//------------------------------------------------------------------
+  public void delete(int key){
+    Node temp = head, prev = null;
+    if(temp != null && temp.data == key){
+      head = temp.next;
+      return;
+    }
+
+    while(temp != null && temp.data != key){
+      prev = temp;
+      temp = temp.next;
+    }
+
+    if(temp == null){
+      return;
+    }
+
+    prev.next = temp.next;
+  }
 
 
 
