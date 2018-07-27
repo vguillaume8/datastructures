@@ -1,0 +1,21 @@
+/*
+  Decision Trees are a decision support tool that uses a tree-like graph
+  or model of decisions and their possible consequences. Including chance-event
+  outcomes, resource costs and utility. The decision tree algorithm can be used for
+  solving the regression and classification problems too.
+
+  Main Goal: Perfect classification with minimum number of decisions.
+
+  1. Classification Trees: Used to separate the dataset into different classes.
+                          ex. Two variables age and weight. Based on this we are
+                              going to determine whether person will join gym.
+  2. Regression Trees: Used when the response variable is continuous or numerical.
+                      ex. Predicted price of a consumer good.
+
+  When to use: If the training data contains error.
+               When the training data has missing values.
+
+  Advantages: Easy to explain
+              Data type is not constraint as they can handle both categorical
+              and numerical values.
+              Helpful in data exploration as they implicitly perform the feature selection.
