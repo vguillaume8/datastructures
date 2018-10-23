@@ -60,9 +60,9 @@ public class LinkedList{
   }
 //------------------------------------------------------------------
 // Reverse LinkedList
-  public Node reverse(Node node){
+  public LinkedList reverse(LinkedList list){
     Node prev = null;
-    Node current = node;
+    Node current = list.head;
 
     while(current != null){
       Node next = current.next;
@@ -70,8 +70,8 @@ public class LinkedList{
       prev = current;
       current = next;
     }
-    node = prev;
-    return node;
+    list.head = prev;
+    return list;
   }
 //------------------------------------------------------------------
   public void delete(int key){

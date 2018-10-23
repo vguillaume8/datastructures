@@ -9,7 +9,7 @@ public class LinkedListTester{
     list.addAtFront(8);
     list.addAtEnd(5);
     list.printList();
-    //list.reverse(list.head);
+    list.reverse(list);
     System.out.println();
     list.delete(8);
     list.printList();
